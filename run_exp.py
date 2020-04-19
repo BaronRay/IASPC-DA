@@ -7,7 +7,6 @@ import numpy as np
 from tensorflow.keras import backend as K
 K.set_image_data_format('channels_last')
 from datasets import load_data
-import matplotlib.pyplot as plt
 
 
 def run_exp(dbs, da_s1, da_s2, expdir, ae_weights_dir, trials=5, verbose=0,
@@ -72,9 +71,9 @@ if __name__=="__main__":
 
     ae_weight_root = None  # 'result'
     trials = 5
-    verbose = 0
+    verbose = 1 #不想看进度条记录就改成0
     dbs = ['fmnist']
-    pretrain_epochs = 200
+    pretrain_epochs = 500  #fmnist 200/300足矣
     finetune_epochs = 100
     use_multiprocessing = False  # if encounter errors, set it to False
 
