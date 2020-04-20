@@ -27,7 +27,7 @@ def autoencoder(dims, act='relu'):
     # internal layers in encoder
 
     for i in range(n_stacks-1):
-        # Dropout(0.05)
+        # Dropout(0.25)
         h = Dense(dims[i + 1], activation=act, kernel_initializer=init,name='encoder_%d' % i)(h)
     # kernel_regularizer = regularizers.l2(0.00001) 当不用Dropout时加在encoder中
 
